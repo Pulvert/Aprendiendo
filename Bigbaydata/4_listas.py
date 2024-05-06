@@ -72,8 +72,8 @@ suspensos = sum(1 for x in lista_notas if x <5)
 print(str("[" + lista_asignaturas[0]) +", " + str(alumnos) + " alumnos, nota media: " + str(nota_media) + ", Suspensos:" + str(suspensos)+"]")
 
 """
-
-#3
+"""
+#3a
 
 recount = {}
 
@@ -96,10 +96,10 @@ print("Recuento de nombres:")
 for name, recount in recount.items():
     print(f"{name:} {recount}")
 
-
-
+"""
 
 """
+#3b
 # Pedir al usuario que inserte los nombres
 print("Introduce los nombres separados por comas (-1 para terminar):")
 nombres_input = input().split(",")
@@ -121,3 +121,69 @@ print("Recuentos de nombres:")
 for nombre, recuento in recuentos.items():
     print(f"{nombre}: {recuento}")
 """
+"""
+#4
+
+names_list = []
+
+while True:
+
+    names = input("Introduce nombre(-1 para salir): ")
+
+    if names == "-1":
+        break
+
+    else:
+        names_list.append(names)
+
+
+nombres_sin_repetir = list(set(names_list))
+
+print (nombres_sin_repetir)
+"""
+
+"""
+#5
+list_res = []
+num = 6
+
+for x in range (0,20):
+    x +=1
+    res = num * x
+
+    list_res.append(res)
+
+
+print (list_res)
+"""
+"""
+#6
+
+print(list_num)
+
+def es_primo(numero):
+    if numero <= 1:
+        return False
+    elif numero <= 3:
+        return True
+    elif numero % 2 == 0 or numero % 3 == 0:
+        return False
+    i = 5
+    while i * i <= numero:
+        if numero % i == 0 or numero % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+# Inicializar una lista con los primeros 10 números primos
+numeros_primos = []
+numero = 2
+while len(numeros_primos) < 10:
+    if es_primo(numero):
+        numeros_primos.append(numero)
+    numero += 1
+
+# Imprimir la lista de los primeros 10 números primos
+print("Los primeros 10 números primos son:", numeros_primos)
+"""
+
