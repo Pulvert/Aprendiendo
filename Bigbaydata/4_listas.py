@@ -187,3 +187,11 @@ while len(numeros_primos) < 10:
 print("Los primeros 10 números primos son:", numeros_primos)
 """
 
+lista_compra = ["manzanas", "papel", "yogurt", "chocolate" , "leche"]
+
+
+lista_compra.pop()
+
+lista_compra.reverse()
+
+print(lista_compra)

@@ -7,3 +7,10 @@ def aa (a, b):
         return False 
     
 print (aa (5,9))
+
+
+texto_largo = """Esto
+es un texto
+largo"""
+
+print (texto_largo)

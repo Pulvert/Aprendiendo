@@ -1,13 +1,14 @@
-"""
-#1
+
+#1 Imprime «Hola Mundo» si a es mayor a b. 
 a=int(input("valor: "))
 b=int(input("valor: "))
 
-if a > b:
+if:
+    a > b
     print("hello world")
+
 """
-"""
-#2
+#2 Determinar si alguien es menor de edad o no. Pide al usuario la edad por pantalla e imprime por pantalla si puede acceder a nuestra fiesta nocturna de BigBayData.com.
 edad=int(input("edad: "))
 
 if edad >= int(18):
