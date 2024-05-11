@@ -28,12 +28,12 @@ def tareas (): # Definimos función para reutilizar código si fuera necesario
 
         if action == "1":
             if not no_completadas and not completadas: # En el caso de que no se hayam introducido tareas
-                print("Todavía no exixten tareas")
+                print("\nTodavía no existen tareas")
             else:
                 print("\nTareas no completadas:") 
                 for indice, tarea in enumerate(no_completadas, start=1):
                     print(f"{indice}. {tarea}") # Muestra tareas no completadas iterando sobre la lista. Le damos formato para enumerar los elementos (índice - tarea)
-                print("Tareas completadas:")
+                print("\nTareas completadas:")
                 for indice, tarea in enumerate(completadas, start=1):
                     print(f"{indice}. {tarea}") # Muestra tareas completadas iterando sobre la lista. Le damos formato para enumerar los elementos (índice - tarea)
 
@@ -43,7 +43,7 @@ def tareas (): # Definimos función para reutilizar código si fuera necesario
 
         elif action == "3":
             if not no_completadas:
-                print("No exixten tareas no completadas")
+                print("\nNo exixten tareas no completadas")
             else:
                 completada = int(input("Qué tarea ha completado?: ")) # Preguntamos al usuario el número de tarea de la lista de "no completadas" ha completado
                 tarea_completada=no_completadas.pop(completada-1) # La quitamos de la lista "no completadas" y la guardamos en una variable
@@ -51,20 +51,20 @@ def tareas (): # Definimos función para reutilizar código si fuera necesario
 
         elif action == "4":
             if not no_completadas and not completadas: # En el caso de que no se hayan introducido tareas
-                print("No existen tareas")
+                print("\nNo existen tareas")
             else:
-                bb = input("Quiere eliminar una tarea completada o no completada?: ") # Distinguimos de qué lista quiere eliminar la tarea
+                bb = input("\nQuiere eliminar una tarea completada o no completada?: ") # Distinguimos de qué lista quiere eliminar la tarea
                 if bb == "no completada":
                     if not no_completadas:
-                       print("No existen tareas no completadas")
+                       print("\nNo existen tareas no completadas")
                     else:
-                        elim = int(input("Qué tarea no completada quiere eliminar?: "))
+                        elim = int(input("\nQué tarea no completada quiere eliminar?: "))
                         no_completadas.pop(elim-1) # Eliminamos de la lista "no completadas" según su posición (-1 porque se empieza a contar desde 0 y nuestro primer número de la lista es 1)
                 elif bb == "completada":
                     if not completadas:
-                        print("No existen tareas completadas")
+                        print("\nNo existen tareas completadas")
                     else:
-                        elim = int(input("Qué tarea completada quiere eliminar?: "))
+                        elim = int(input("\nQué tarea completada quiere eliminar?: "))
                         completadas.pop(elim-1) # Eliminamos de la lista "completadas" según su posición (-1 porque se empieza a contar desde 0 y nuestro primer número de la lista es 1)
 
         elif action == "5": # La única forma de salir
