@@ -1,9 +1,23 @@
-from colorama import Fore, Back, Style # Importamos biblioteca para poner colorcitos
+from colorama import Fore, Style # Importamos biblioteca para poner colorcitos
+import json # Importamos biblioteca para poder guardar las tareas una vez cerrado el programa
+
 
 class Task: # Creamos atributos de clase "task"
     def __init__(self): # Creamos atributos de clase "task"
         self.dic_task = {} # Creamos diccionario de tareas
-    
+        self.load_tasks() # Nos permite importar tareas antes cargadas
+
+    def load_tasks(self): # Método para importar tareas antes cargadas
+        try:
+            with open("tasks.json", "r") as file:
+                self.dic_task = json.load(file) # Busca el archivo y carga el diccionario
+        except FileNotFoundError:
+            pass  # Si el archivo no existe, no hay tareas que cargar
+
+    def save_tasks(self): # Método para guardar tareas
+        with open("tasks.json", "w") as file:
+            json.dump(self.dic_task, file)
+
     def add_task(self): # Método que añade tarea no completada
         task = input("\nInserte tarea: ")
         self.dic_task[task] = "No completado"
@@ -37,11 +51,11 @@ class Task: # Creamos atributos de clase "task"
 
 task_instance = Task() # Creamos instancia de la clase "task"
 
-options = print("\n MENU PRINCIPAL\n ------------\n1- Mostrar tareas\n2- Agregar tarea\n3- Marcar tarea como completada\n4- Eliminar tarea\n5- Fin\nhelp- Recordar opciones") # Opciones que se muestran al usuario
+options = print(f"\n MENU PRINCIPAL\n ------------\n1- {Fore.BLUE}Mostrar tareas{Style.RESET_ALL}\n2- {Fore.BLUE}Agregar tarea{Style.RESET_ALL}\n3- {Fore.BLUE}Marcar tarea como completada{Style.RESET_ALL}\n4- {Fore.BLUE}Eliminar tarea{Style.RESET_ALL}\n5- {Fore.BLUE}Fin{Style.RESET_ALL}") # Opciones que se muestran al usuario
 
 while True:
 
-    action = input("\n1 Elige opción: ")
+    action = input("\n1 Elige opción ('help' para recordar opciones): ")
     
     if action == "1": 
         task_instance.print_tasks() # Ejecuta método imprime las tareas
@@ -56,10 +70,11 @@ while True:
         task_instance.del_task() # Ejecuta método que elimina tarea
 
     elif action == "5":
+        task_instance.save_tasks()  # Guardar las tareas antes de salir
         break # Salir del bucle
 
     elif action == "help":
-        print("\n MENU PRINCIPAL\n ------------\n1- Mostrar tareas\n2- Agregar tarea\n3- Marcar tarea como completada\n4- Eliminar tarea\n5- Fin\nhelp- Recordar opciones") # Opciones que se muestran al usuario
+        print(f"\n MENU PRINCIPAL\n ------------\n1- {Fore.BLUE}Mostrar tareas{Style.RESET_ALL}\n2- {Fore.BLUE}Agregar tarea{Style.RESET_ALL}\n3- {Fore.BLUE}Marcar tarea como completada{Style.RESET_ALL}\n4- {Fore.BLUE}Eliminar tarea{Style.RESET_ALL}\n5- {Fore.BLUE}Fin{Style.RESET_ALL}") # Opciones que se muestran al usuario
 
     else:
         print((f"\n{Fore.RED}Error: Opción incorrecta{Style.RESET_ALL}")) # Error si no se marca opción correcta

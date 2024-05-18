@@ -1,0 +1,34 @@
+# 1 Pide al usuario que impute una lista de alumnos, separadas con ;. Después, pregunta por las notas de ellas. Realizar diccionario 
+# para después poder preguntar por alguien y observar sus notas.
+
+
+# Pide al usuario que ingrese una lista de alumnos separados por ;
+alumnos_input = input("Ingrese la lista de alumnos separados por ';' : ")
+
+print (alumnos_input)
+
+# Dividir la entrada del usuario en una lista de nombres de alumnos
+alumnos = alumnos_input.split(';')
+
+print (type(alumnos))
+
+"""
+# Crear un diccionario vacío para almacenar las notas de los alumnos
+notas_alumnos = {}
+
+# Pedir las notas de cada alumno y almacenarlas en el diccionario
+for alumno in alumnos:
+    notas_input = input(f"Ingrese las notas de {alumno} separadas por espacio: ")
+    notas = notas_input.split()
+    notas = [float(nota) for nota in notas]  # Convertir las notas a números flotantes
+    notas_alumnos[alumno] = notas
+
+# Pedir al usuario el nombre de un alumno para ver sus notas
+nombre_buscar = input("Ingrese el nombre del alumno del que desea ver las notas: ")
+
+# Verificar si el alumno está en el diccionario y mostrar sus notas si es así
+if nombre_buscar in notas_alumnos:
+    print(f"Notas de {nombre_buscar}: {notas_alumnos[nombre_buscar]}")
+else:
+    print(f"{nombre_buscar} no se encuentra en la lista de alumnos.")
+"""

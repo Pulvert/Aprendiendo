@@ -186,12 +186,97 @@ while len(numeros_primos) < 10:
 # Imprimir la lista de los primeros 10 números primos
 print("Los primeros 10 números primos son:", numeros_primos)
 """
-
+"""
+#7
 lista_compra = ["manzanas", "papel", "yogurt", "chocolate" , "leche"]
-
 
 lista_compra.pop()
 
 lista_compra.reverse()
 
 print(lista_compra)
+"""
+"""
+#8 Añade las estadísticas de los primeros 10 pokemon en nuestra pokedex. Fíjate qué estadísticas quieres
+#  para todos los pokemon. Aquí algunas sugerencias: nombre, ataque, hp, defensa, velocidad, at_Esp, def_Esp. Después, utiliza la lista como una pokedex para consultarlo.
+
+stats = ["Nombre", "Ataque", "Hp", "Defensa", "Velocidad", "At_Esp", "Def_Esp"]
+
+bulbasur = ["Bulbasur", 50, 500, 35, 10, 40, 45]
+pikachu = ["Pikachu", 40, 300, 50, 20, 60, 45]
+
+def print_stats(a):
+
+    print(f"{stats[0]}: {a[0]}\n{stats[1]}: {a[1]}\n{stats[2]}: {a[2]}\n{stats[3]}: {a[3]}\n{stats[4]}: {a[4]}\n{stats[5]}: {a[5]}\n{stats[6]}: {a[6]}\n  ")
+
+
+pokemon = input("Qué Pokemon quieres consultar?: ")
+
+
+if pokemon == "bulbasur":
+    a = bulbasur
+    print_stats(a)
+
+if pokemon == "pikachu":
+    a = pikachu
+    print_stats(a)
+"""
+"""
+#9 Imagina construir un sistema de planning de vuelos de un aeropuerto cercano. Crea una planificación donde dentro contiene, por día de la semana, horario, compañia, duracion_estimada, tipo_avion. Utiliza una lista dentro de otra lista.
+# PD: Después de llenar los datos necesitarás ofrecer al usuario ver la información.
+
+list = ["día de la semana", "horario", "compañia", "duracion_estimada", "tipo_avion", []]
+
+print (list)
+
+a = input("introduzca día de la semana: ")
+b = input("introduzca horario: ")
+c = input("introduzca compañía: ")
+d = input("introduzca duración: ")
+e = input("introduzca tipo de avión: ")
+
+
+list[-1].append(a)
+list[-1].append(b)
+list[-1].append(c)
+list[-1].append(d)
+list[-1].append(e)
+
+print (f"{list[0]}: {list[-1][0]} \n {list[1]}: {list[-1][1]} \n {list[2]}: {list[-1][2]} \n {list[3]}: {list[-1][3]} \n {list[4]}: {list[-1][4]} ")
+"""
+
+#10 Haz un sistema de ordenamiento de ayudas para tu comunidad. La idea es que insertes todos los emails que quieras para, aleatoriamente, ofrecer N ayudas. 
+# El objetivo es tener un sistema justo de ayudas para repartir entre la ciudadanía que se postula. Una vez lo tengas, desarrolla un sistema de envío automático por correo. ¿Serás capaz?
+
+import random
+
+email_list = []
+
+while True:
+
+    emails = input("inserte correo electrónico 'fin' para terminar: ")
+
+    if emails == "fin":
+        break
+    
+    else:
+        email_list.append (emails)
+
+ayudas = 2
+
+seleccionados = random.sample(email_list, ayudas)
+
+print (seleccionados)
+
+
+for seleccionado in seleccionados:
+
+    print("felcididades", seleccionado)
+
+
+
+
+
+
+
+
