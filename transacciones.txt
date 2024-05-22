@@ -1,0 +1,6 @@
+2024-01-15,ingreso,1000.00,Salario
+2024-01-20,gasto,200.50,Supermercado
+2024-02-10,ingreso,1500.00,Venta de coche
+2024-02-12,gasto,300.00,Restaurante
+2024-02-15,gasto,50.00,Gasolina
+2024-03-01,ingreso,200.00,Freelance
